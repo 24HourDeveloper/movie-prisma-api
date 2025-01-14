@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_moviedata:/var/lib/pgadmin
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: moviedb
+      PGDATA: /var/lib/postgresql/moviedata
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_moviedata:/var/lib/postgresql/moviedata
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+volumes:
+  pgadmin_moviedata:
+  postgres_moviedata:
