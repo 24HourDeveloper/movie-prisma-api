@@ -5,10 +5,11 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn src/index.ts",
-    "build": "prisma generate && npx tsc",
+    "build": "npx tsc",
     "start": "node src/index.ts",
     "test": "jest",
-    "vercel-build": "prisma generate && echo hello"
+    "vercel-build": "echo hello",
+    "postinstall": "prisma generate"
   },
   "author": "uncoded lifestyle",
   "license": "ISC",
