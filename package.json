@@ -8,7 +8,7 @@
     "build": "prisma generate && npx tsc",
     "start": "node src/index.ts",
     "test": "jest",
-    "vercel-build": "echo hello"
+    "vercel-build": "prisma generate && echo hello"
   },
   "author": "uncoded lifestyle",
   "license": "ISC",
