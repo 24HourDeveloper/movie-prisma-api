@@ -9,7 +9,7 @@
     "start": "node src/index.ts",
     "test": "jest",
     "vercel-build": "echo hello",
-    "postinstall": "prisma generate"
+    "postinstall": "npx prisma generate"
   },
   "author": "uncoded lifestyle",
   "license": "ISC",
